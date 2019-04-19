@@ -1,6 +1,0 @@
-@charset "UTF-8";
-
-.custom-file-input:lang(ja) ~ .custom-file-label::after {
-  content: "\53C2\7167";
-}
-

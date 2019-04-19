@@ -16,6 +16,16 @@
           @endif
           <form method="post" action="{{ route('create.product') }}" enctype="multipart/form-data">
             @csrf
+            <div class="form-group col-md-6 p-0">
+              <label class="col-form-label">カテゴリ</label>
+              <select class="form-control" name="category" value="{{ old('category') }}">
+                <option name="category">野菜</option>
+                <option name="category">果物</option>
+              </select>
+              @if($errors->has('category'))
+              <span class="validation">{{$errors->first('category')}}</span>
+              @endif
+            </div>
             <div class="form-group">
               <label class="col-form-label">商品名</label>
               <input type="text" class="form-control" name="name" value="{{ old('name') }}">

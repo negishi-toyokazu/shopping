@@ -16,6 +16,8 @@
     {{--郵便番号--}}
     <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 
+    {{--ファビコン--}}
+    <link rel="shortcut icon" href="{{ asset('image/favicon.ico') }}">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link href="./font-awesome.css" rel="stylesheet">
@@ -27,16 +29,16 @@
   <body>
     <div class="logo">
   <a href="{{ route('top')}}">
-    <img src="{{ asset('image/logo.png') }}" class="mx-auto d-block" width="480" height="180">
+    <img src="{{ asset('image/logo.png') }}" class="mx-auto d-block" width="480" height="298">
   </a>
 </div>
     <div id="app">
       {{-- ナビゲーションバー --}}
-    <nav class="navbar navbar-expand-sm navbar-dark bg-success mt-3 mb-3">
+    <nav class="navbar navbar-expand-sm navbar-dark mt-3 mb-3" style="background-color: #7D2D3F">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-        <a class="navbar-brand" href="{{ route ('top')}}"><i class="fas fa-home fa-lg"></i></a>
+      <a class="navbar-brand" href="{{ route ('top')}}"><i class="fas fa-home fa-lg"></i></a>
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -71,11 +73,52 @@
     </nav>
 {{-- ここまでナビゲーションバー --}}
 
+
             <div class="container">
               <main class="py-4">
                   {{-- コンテンツをここに入れる --}}
                   @yield('content')
               </main>
-            </div>
+              <!-- Social buttons -->
+                <ul class="list-unstyled list-inline text-center">
+                  <li class="list-inline-item">
+                    <a class="btn-floating btn-fb mx-1 inline-text" href="https://www.facebook.com/sharer/sharer.php?u=https://www.google.com/" target="_blank">
+                      <span style="font-size: 35px; color: #3b5998;">
+                      <i class="fab fa-facebook"></i>
+                    </span>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="btn-floating btn-tw mx-1 inline-text" href="http://twitter.com/share?url=https://www.google.com/text=ねぎし農園" target="_blank">
+                      <span style="font-size: 35px; color: #55ACEE;">
+                      <i class="fab fa-twitter-square"></i>
+                    </span>
+                    </a>
+                  </li>
+                </ul>
+                <!-- Social buttons -->
+              </div>
+              <!-- Footer -->
+<footer class="page-footer font-small indigo py-3" style="background-color: #7D2D3F">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item"><a href="" class="inline-text">配送について</li>
+        <li class="list-inline-item"><a href="" class="inline-text">支払いについて</li>
+        <li class="list-inline-item"><a href="" class="inline-text">返品について</li>
+      </ul>
+
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Negishi Toyokazu:
+      <a href=""></a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+
   </body>
 </html>

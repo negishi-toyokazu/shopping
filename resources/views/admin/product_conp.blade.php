@@ -6,10 +6,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   </head>
   <body>
+    <div class="container mt-5">
     <h2>商品追加完了しました。</h2>
-    <a href="{{route ('add.product')}}">他の商品を追加</a>
+    <a href="{{route ('add.product')}}">他の商品を追加</a><br><br>
     <a href="{{route ('top')}}">Topへ</a>
-
+  </div>
     {{--<div class="container">
       <div class="card mt-5 p-4">
         <h1 style="text-align: center">商品の確認画面</h1>
@@ -34,6 +35,6 @@
       </div>
     </div>--}}
 
-    
+
   </body>
 </html>

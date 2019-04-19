@@ -1,4 +1,6 @@
-
+body{
+  background: #eee url(http://subtlepatterns.com/patterns/connect.png);
+  }
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
@@ -11,4 +13,8 @@
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.inline-text{
+  color: white;
 }

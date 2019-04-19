@@ -29,3 +29,8 @@ php artisan storage:link
 <input type="text" name="zip21" size="4" maxlength="3"> － <input type="text" name="zip22" size="5" maxlength="4" onKeyUp="AjaxZip3.zip2addr('zip21','zip22','addr21','addr21');">
 <!-- ▼住所入力フィールド(都道府県+以降の住所) -->
 <input type="text" name="addr21" size="40">
+
+<!--twitter-->
+http://twitter.com/share?url=[シェアするURL]&text=[ツイート内テキスト]&via=[ツイート内に含むユーザ名]&related=[ツイート後に表示されるユーザー]&hashtags=[ハッシュタグ]" target="_blank"
+
+https://www.facebook.com/sharer/sharer.php?u=<URL>
