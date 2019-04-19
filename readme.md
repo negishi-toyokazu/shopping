@@ -18,3 +18,14 @@ https://wireframe.cc/VU5ouI
 
 商品の追加画面
 https://wireframe.cc/xwuwk5
+
+画像パス通す
+php artisan storage:link
+
+郵便番号
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+
+<!-- ▼郵便番号入力フィールド(3桁+4桁) -->
+<input type="text" name="zip21" size="4" maxlength="3"> － <input type="text" name="zip22" size="5" maxlength="4" onKeyUp="AjaxZip3.zip2addr('zip21','zip22','addr21','addr21');">
+<!-- ▼住所入力フィールド(都道府県+以降の住所) -->
+<input type="text" name="addr21" size="40">

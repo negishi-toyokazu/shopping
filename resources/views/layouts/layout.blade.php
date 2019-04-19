@@ -8,11 +8,14 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{--font--}}
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet" type="text/css">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    {{--郵便番号--}}
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link href="./font-awesome.css" rel="stylesheet">
@@ -35,7 +38,7 @@
       </button>
         <a class="navbar-brand" href="{{ route ('top')}}"><i class="fas fa-home fa-lg"></i></a>
         <div class="collapse navbar-collapse">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a class="nav-link" href="{{ route ('list')}}">商品一覧</a>
             </li>
@@ -51,6 +54,17 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('form')}}">お問い合わせ</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('cart')}}"><i class="fas fa-shopping-cart"></i> カート</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('shop.register')}}">会員登録</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('shop.login')}}">ログイン</a>
             </li>
           </ul>
         </div>

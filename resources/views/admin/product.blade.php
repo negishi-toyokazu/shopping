@@ -7,33 +7,37 @@
     <link href="{{ asset('css/product.css') }}" rel="stylesheet">
   </head>
   <body>
-<div class="container mt-5">
+    <div class="container mt-5">
+      <h1 style="text-align: center">商品追加</h1>
 
-
-<h1 style="text-align: center">商品追加</h1>
-
-  <div class="card bg-light col-md-8 mx-auto p-3">
-
-    <form class="" action="" >
-  <div class="form-group">
-    <label class="col-form-label">商品名</label>
-    <input type="text" class="form-control" name="product_name">
-  </div>
-  <div class="form-group">
-    <label class="col-form-label">値段</label>
-    <input type="text" class="form-control" name="price">
-  </div>
-  <div class="custom-file form-group p-4 mt-3">
-  <input type="file" class="custom-file-input" id="customFile" lang="ja">
-  <label class="custom-file-label" for="customFile">ファイル選択...</label>
-</div>
-  <div class="form-group mt-4">
-
-  <button type="submit" class="btn btn-primary">追加</button>
-</div>
-</form>
-
-</div>
-</div>
-</body>
+        <div class="card bg-light col-md-6 mx-auto px-5 py-3">
+          @if(count($errors) > 0)
+          <span class="validation">入力に誤りがあります。修正してください。</span>
+          @endif
+          <form method="post" action="{{ route('create.product') }}" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+              <label class="col-form-label">商品名</label>
+              <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+              @if($errors->has('name'))
+              <span class="validation">{{$errors->first('name')}}</span>
+              @endif
+            </div>
+            <div class="form-group">
+              <label class="col-form-label">価格</label>
+              <input type="text" class="form-control" name="price" value="{{ old('price') }}">
+              @if($errors->has('price'))
+              <span class="validation">{{$errors->first('price')}}</span>
+              @endif
+            </div>
+            <div class="form-group mt-2">
+              <input type="file" class="form-control-file" name="image" value="{{ old('image') }}">
+            </div>
+            <div class="form-group mt-2 float-right mr-3">
+              <button type="submit" class="btn btn-primary">確認</button>
+            </div>
+          </form>
+        </div>
+    </div>
+  </body>
 </html>
