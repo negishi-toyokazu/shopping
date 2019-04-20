@@ -9,7 +9,7 @@
         </div>
 
         <div class="card-body bg-light py-3 px-5">
-          <form class="form-horizontal" method="post" action="#">
+          <form class="form-horizontal" method="post" action="{{ route('register') }}">
             @csrf
 
               <div class="form-group">
@@ -33,14 +33,14 @@
               </div>
               <!-- ▼郵便番号入力フィールド(3桁+4桁) -->
               <div class="form-group">
-                <p class="font-weight-bold">郵便番号</p>
-                <input type="text" name="" size="4" maxlength="3"> － <input type="text" name="zip22" size="5" maxlength="4" onKeyUp="AjaxZip3.zip2addr('zip21','zip22','addr21','addr21');">
-              </div>
-              <!-- ▼住所入力フィールド(都道府県+以降の住所) -->
-              <div class="form-group">
-                <p class="font-weight-bold">住所</p>
-                <input type="text" name="address" class="form-control">
-              </div>
+                <p class="font-weight-bold">郵便番号(ハイフンもOK)</p>
+                  <input type="text" name="post" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');">
+                </div>
+                <div class="form-group">
+                  <p class="font-weight-bold">都道府県と以降の住所</p>
+                  <input type="text" name="address" class="form-control">
+                </div>
+
 
               <div class="form-group">
                 <p class="font-weight-bold">パスワード(8文字以上)</p>

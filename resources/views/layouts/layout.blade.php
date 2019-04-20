@@ -58,16 +58,39 @@
               <a class="nav-link" href="{{ route('form')}}">お問い合わせ</a>
             </li>
           </ul>
+
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('cart')}}"><i class="fas fa-shopping-cart"></i> カート</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('shop.register')}}">会員登録</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('shop.login')}}">ログイン</a>
-            </li>
+            {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
+            @guest
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('shop.register')}}">会員登録</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('shop.login')}}">ログイン</a>
+              </li>
+            {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
+              @else
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('cart')}}"><i class="fas fa-shopping-cart"></i> カート</a>
+              </li>
+
+                <li class="nav-item dropdown">
+                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                      {{ Auth::user()->name }} <span class="caret"></span>
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ route('logout') }}"
+                         onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
+                          {{ __('ログアウト') }}
+                      </a>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                </form>　
+              </div>
+              </li>
+              @endguest
           </ul>
         </div>
     </nav>
@@ -76,8 +99,12 @@
 
             <div class="container">
               <main class="py-4">
-                  {{-- コンテンツをここに入れる --}}
-                  @yield('content')
+                  {{-- フラッシュメッセージの表示 --}}
+                    @if (session('message'))
+                        <div class="alert alert-success">{{ session('message') }}</div>
+                    @endif
+                  {{--コンテンツ--}}
+                    @yield('content')
               </main>
               <!-- Social buttons -->
                 <ul class="list-unstyled list-inline text-center">
@@ -118,7 +145,5 @@
 
   </footer>
   <!-- Footer -->
-
-
   </body>
 </html>

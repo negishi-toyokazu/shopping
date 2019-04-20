@@ -9,7 +9,7 @@
        </div>
 
        <div class="card-body bg-light py-3 px-5">
-         <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+         <form class="form-horizontal" method="post" action="{{ route('login') }}" enctype="multipart/form-data">
            @csrf
 
              <div class="form-group">
