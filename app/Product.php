@@ -13,4 +13,14 @@ class Product extends Model
       'price' => 'integer',
       'image' => 'image',
     );
+
+    public function cart()
+    {
+        return $this->hasMany('App\Cart');
+    }
+
+    public function order()
+    {
+        return $this->hasMany('App\Order');
+    }
 }

@@ -12,13 +12,19 @@
       <div class="card-body">
         <h5 class="card-title">{{$product->name}}</h5>
         <p class="card-text">値段: {{$product->price}}円</p>
-        <div class="form-group">
-        <input type="number" name="" value="1"><br>
-      </div>
-        <br>
-        <input type="submit" value="カートに入れる" class="btn btn-primary">
-      </div>
 
+        <form action="{{ route('add.cart', [$product->id]) }}" method="post">
+          @csrf
+        <div class="form-group">
+        <input type="number" class="form-control" name="number" value="1"><br>
+      </div>
+      <div class="form-group">
+        <input type="hidden" class="form-control" name="product_id" value="{{$product->id}}">
+      </div>
+        <button type="submit" class="btn btn-danger">カートに入れる</button>
+
+      </form>
+</div>
     </div>
 @endforeach
   </div>

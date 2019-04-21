@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Product;
+use App\Cart;
+use App\Order;
+use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
@@ -19,6 +22,20 @@ class ShopController extends Controller
       return view('shop.show', compact('products'));
     }
 
+    public function add(Request $request)
+    {
+      $cart = new Cart;
+      $cart->user_id = Auth::id();
+      $cart->product_id = $request->input('product_id');
+      $form = $request->all();
+      unset($form['_token']);
+      $cart->fill($form);
+      $cart->save();
+
+      session()->flash('message', 'カートに追加しました。');
+      return redirect('/shop/show');
+    }
+
     public function form()
     {
       return view('shop.form');
@@ -31,8 +48,19 @@ class ShopController extends Controller
 
     public function cart()
     {
-      return view('shop.cart');
+      $user_id = Auth::id();
+      $cart = Cart::where('user_id', $user_id)->get();
+
+      return view('shop.cart', compact('cart') );
     }
+
+    public function kakunin()
+    {
+      return view('shop.kakunin');
+    }
+
+
+
 
     public function register()
     {
