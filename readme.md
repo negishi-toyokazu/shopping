@@ -32,3 +32,6 @@ php artisan storage:link
 http://twitter.com/share?url=[シェアするURL]&text=[ツイート内テキスト]&via=[ツイート内に含むユーザ名]&related=[ツイート後に表示されるユーザー]&hashtags=[ハッシュタグ]" target="_blank"
 
 https://www.facebook.com/sharer/sharer.php?u=<URL>
+
+git remote set-url origin git@github.com:negishi-toyokazu/sample2.git
+git push -u origin master
