@@ -26,13 +26,12 @@ class ShopController extends Controller
     {
       $cart = new Cart;
       $cart->user_id = Auth::id();
-      $cart->product_id = $request->input('product_id');
       $form = $request->all();
       unset($form['_token']);
       $cart->fill($form);
       $cart->save();
 
-      session()->flash('message', 'カートに追加しました。');
+      session()->flash('message', '商品をカートに追加しました。');
       return redirect('/shop/show');
     }
 
@@ -54,9 +53,33 @@ class ShopController extends Controller
       return view('shop.cart', compact('cart') );
     }
 
+    public function cartDelete(Request $request)
+    {
+        Cart::find($request->id)->delete();
+        session()->flash('message', 'カートから削除しました');
+        return redirect('/shop/cart');
+    }
+
+    public function order(Request $request, $id)
+    {
+      $order = new Order;
+      $order->user_id = Auth::id();
+      $form = $request->all();
+      unset($form['_token']);
+      $order->fill($form);
+      $order->save();
+
+      session()->flash('message', 'ご注文の確認をお願いいたします。');
+
+      return redirect('/shop/order/kakunin');
+    }
+
     public function kakunin()
     {
-      return view('shop.kakunin');
+      $user_id = Auth::id();
+      $orders = Order::where('user_id', $user_id)->get();
+
+      return view('shop.kakunin', compact('orders') );
     }
 
 

@@ -32,6 +32,7 @@
     <img src="{{ asset('image/logo.png') }}" class="mx-auto d-block" width="480" height="298">
   </a>
 </div>
+
     <div id="app">
       {{-- ナビゲーションバー --}}
     <nav class="navbar navbar-expand-sm navbar-dark mt-3 mb-3" style="background-color: #7D2D3F">

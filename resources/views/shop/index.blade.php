@@ -1,6 +1,11 @@
 @extends('layouts.layout')
 @section('title', '根岸農園')
 @section('content')
+@if(Auth::user())
+<div class="">
+  <h4>ようこそ　{{ Auth::user()->name }}　様</h4>
+</div>
+@endif
 <div class="card bg-dark">
 <div id="carouselExampleIndicators" class="carousel slide p-4" data-ride="carousel">
   <!-- インジケータの設定 -->

@@ -34,11 +34,11 @@
               <!-- ▼郵便番号入力フィールド(3桁+4桁) -->
               <div class="form-group">
                 <p class="font-weight-bold">郵便番号(ハイフンもOK)</p>
-                  <input type="text" name="post" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');">
+                  <input type="text" name="post" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');" required>
                 </div>
                 <div class="form-group">
                   <p class="font-weight-bold">都道府県と以降の住所</p>
-                  <input type="text" name="address" class="form-control">
+                  <input type="text" name="address" class="form-control" required>
                 </div>
 
 

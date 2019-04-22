@@ -7,13 +7,17 @@ Route::get('/', function () {
 Route::get('/shop', 'ShopController@index')->name('top');
 //商品一覧
 Route::get('/shop/show', 'ShopController@show')->name('list');
-Route::post('/shop/show', 'ShopController@add')->name('add.cart');
+Route::post('/shop/show', 'ShopController@add')->middleware('auth')->name('add.cart');
 //お問い合わせフォーム
 Route::get('/shop/form', 'ShopController@form')->name('form');
 //農園情報
 Route::get('/shop/info', 'ShopController@info')->name('info');
 //カート
 Route::get('/shop/cart', 'ShopController@cart')->middleware('auth')->name('cart');
+Route::post('/shop/cart/{id}', 'ShopController@order')->middleware('auth')->name('order');
+
+//削除
+Route::post('/shop/cart/', 'ShopController@cartDelete')->middleware('auth')->name('cart.delete');
 //注文確認
 Route::get('/shop/order/kakunin', 'ShopController@kakunin')->middleware('auth')->name('kakunin');
 
