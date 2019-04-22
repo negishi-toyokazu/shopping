@@ -30,17 +30,16 @@
 
             <td>
               <div class="form-group">
-              <input style="width:50px" type="number" name="number" value="{{$item->number}}">個
+              <input style="width:50px" type="number" name="items[{{ $item->product_id }}][number]" value="{{$item->number}}">個
+              <input type="hidden" name="items[{{ $item->product_id }}][product_id]" value="{{$item->product_id}}">
+              </div>
             </td>
-                  </div>
-            <div class="form-group">
-              <input type="hidden" name="product_id" value="{{$item->product_id}}">
-            </div>
+
             <td>{{ $item->product->price }} 円</td>
             <td>{{ $item->product->price * $item->number }} 円</td>
 
             <td><button type="submit" class="btn btn-danger btn-sm">削除</button></td>
-            
+
           </tbody>
         </table>
         @endforeach

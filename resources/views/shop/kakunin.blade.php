@@ -50,7 +50,7 @@
               <li class="list-group-item"><h4>{{$order->product->name}} {{$order->product->price}} ✖️ {{$order->number}}</h4></li>
               @endforeach
               <li class="list-group-item">
-                小計 : {{$order->product->price * $order->number}} 円
+                合計 : {{$total}} 円
               </li>
 
               <li class="list-group-item">配送料 : </li>

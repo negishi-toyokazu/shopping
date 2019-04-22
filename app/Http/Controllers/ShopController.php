@@ -62,12 +62,15 @@ class ShopController extends Controller
 
     public function order(Request $request, $id)
     {
-      $order = new Order;
-      $order->user_id = Auth::id();
-      $form = $request->all();
-      unset($form['_token']);
-      $order->fill($form);
+      $items = $request->input('items');
+      foreach ($items as $key => $product) {
+        $order = new Order;
+        $order->product_id = $product['product_id'];
+        $order->number = $product['number'];
+        $order->user_id = Auth::id();
+        unset($request['_token']);
       $order->save();
+      }
 
       session()->flash('message', 'ご注文の確認をお願いいたします。');
 
@@ -79,7 +82,12 @@ class ShopController extends Controller
       $user_id = Auth::id();
       $orders = Order::where('user_id', $user_id)->get();
 
-      return view('shop.kakunin', compact('orders') );
+      $total=0;
+      foreach ($orders as $order){
+        $total += $order->product->price * $order->number;
+      }
+
+      return view('shop.kakunin', compact('orders', 'total') );
     }
 
 
