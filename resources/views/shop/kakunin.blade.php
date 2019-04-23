@@ -39,15 +39,15 @@
       </div>
 
       <div class="col-md-5">
-        <div class="card p-3 my-3">
+        <div class="card p-4 my-3">
           <div class="card-head">
             <p>注文の詳細</p>
           </div>
 
-          <div class="card-body p-0">
+          <div class="card-body">
             <ul class="list-group list-group-flush">
               @foreach($orders as $order)
-              <li class="list-group-item"><h4>{{$order->product->name}} {{$order->product->price}} ✖️ {{$order->number}}</h4></li>
+              <li class="list-group-item"><p>{{$order->product->name}} {{$order->product->price}} ✖️ {{$order->number}}</p></li>
               @endforeach
               <li class="list-group-item">
                 合計 : {{$total}} 円
