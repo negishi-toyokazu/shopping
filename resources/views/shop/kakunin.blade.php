@@ -68,8 +68,8 @@
                 <li class="list-group-item"><p class="text-right">配送料 : 無料</p></li>
                 <li class="list-group-item"><p class="text-right">ご請求金額 : {{$total}} 円</p></li>
                 @else
-                <li class="list-group-item">配送料 : 500円</li>
-                <li class="list-group-item">ご請求金額 :　{{$total+500}} 円</li>
+                <li class="list-group-item"><p class="text-right">配送料 : 500円</p></li>
+                <li class="list-group-item"><p class="text-right">ご請求金額 :　{{$total+500}} 円</p></li>
                 @endif
               </ul>
 

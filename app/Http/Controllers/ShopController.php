@@ -39,14 +39,17 @@ class ShopController extends Controller
 
     public function add(Request $request)
     {
-        $cart = new Cart;
-        $cart->user_id = Auth::id();
-        $form = $request->all();
-        unset($form['_token']);
-        $cart->fill($form);
-        $cart->save();
+        $cart = Cart::firstOrCreate(
+          ['product_id' => $request->product_id, 'user_id' => Auth::id()],
+          ['product_id' => $request->product_id, 'user_id' => Auth::id(), 'number' => $request->number]
+      );
 
-        session()->flash('message', '商品をカートに追加しました。');
+        if ($cart->wasRecentlyCreated) {
+            session()->flash('message', $cart->product->name.'をカートに追加しました。');
+        } else {
+            session()->flash('message', $cart->product->name.'はカートにすでに入っています。');
+        }
+
         return redirect('/shop/show');
     }
 
@@ -83,11 +86,6 @@ class ShopController extends Controller
                 ['product_id' => $product['product_id'], 'user_id' => Auth::id()],
                 ['product_id' => $product['product_id'], 'user_id' => Auth::id(), 'number' => $product['number']]
             );
-            //$order->product_id = $product['product_id'];
-            //$order->number = $product['number'];
-            //$order->user_id = Auth::id();
-            unset($request['_token']);
-            //$order->save();
         }
 
         session()->flash('message', 'ご注文の確認をお願いいたします。');
