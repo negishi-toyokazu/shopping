@@ -22,6 +22,21 @@ class ShopController extends Controller
         return view('shop.show', compact('products'));
     }
 
+    public function yasai()
+    {
+        $yasais = Product::where('category', '野菜')->get();
+
+        return view('shop.yasai', compact('yasais'));
+    }
+
+    public function fruits()
+    {
+        $fruits = Product::where('category', '果物')->get();
+
+        return view('shop.fruits', compact('fruits'));
+    }
+
+
     public function add(Request $request)
     {
         $cart = new Cart;
@@ -64,10 +79,9 @@ class ShopController extends Controller
     {
         $items = $request->input('items');
         foreach ($items as $key => $product) {
-
             Order::updateOrCreate(
-              ['product_id' => $product['product_id'], 'user_id' => Auth::id()],
-              ['product_id' => $product['product_id'], 'user_id' => Auth::id(), 'number' => $product['number']]
+                ['product_id' => $product['product_id'], 'user_id' => Auth::id()],
+                ['product_id' => $product['product_id'], 'user_id' => Auth::id(), 'number' => $product['number']]
             );
             //$order->product_id = $product['product_id'];
             //$order->number = $product['number'];

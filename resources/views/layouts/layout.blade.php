@@ -48,8 +48,8 @@
             <li class="nav-item dropdown">
               <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">カテゴリ</a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">野菜</a>
-                <a class="dropdown-item" href="#">果物</a>
+                <a class="dropdown-item" href="{{ route('yasai') }}">野菜</a>
+                <a class="dropdown-item" href="{{ route('fruits') }}">果物</a>
               </div>
             </li>
             <li class="nav-item">

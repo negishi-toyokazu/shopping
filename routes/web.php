@@ -7,6 +7,10 @@ Route::get('/', function () {
 Route::get('/shop', 'ShopController@index')->name('top');
 //商品一覧
 Route::get('/shop/show', 'ShopController@show')->name('list');
+//野菜と果物で表示を分類
+Route::get('/shop/show/yasai', 'ShopController@yasai')->name('yasai');
+Route::get('/shop/show/fruits', 'ShopController@fruits')->name('fruits');
+
 Route::post('/shop/show', 'ShopController@add')->middleware('auth')->name('add.cart');
 //お問い合わせフォーム
 Route::get('/shop/form', 'ShopController@form')->name('form');

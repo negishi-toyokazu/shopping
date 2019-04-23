@@ -47,15 +47,31 @@
           <div class="card-body">
             <ul class="list-group list-group-flush">
               @foreach($orders as $order)
-              <li class="list-group-item"><p>{{$order->product->name}} {{$order->product->price}} ✖️ {{$order->number}}</p></li>
-              @endforeach
               <li class="list-group-item">
-                合計 : {{$total}} 円
+                <div class="row">
+                  <div class="col-md-4">
+                    {{$order->product->name}}
+                  </div>
+                  <div class="col-md-4">
+                    {{$order->product->price}}円✖️{{$order->number}}
+                  </div>
+                  <div class="col-md-4">
+                     {{$order->product->price*$order->number}}円
+                  </div>
+                </div>          　　　
               </li>
-
-              <li class="list-group-item">配送料 : </li>
-              <li class="list-group-item">ご請求金額 :</li>
-            </ul>
+              @endforeach
+                <li class="list-group-item">
+                  <p class="text-right">合計 : {{$total}} 円</p>
+                </li>
+                @if($total >= 3000)
+                <li class="list-group-item"><p class="text-right">配送料 : 無料</p></li>
+                <li class="list-group-item"><p class="text-right">ご請求金額 : {{$total}} 円</p></li>
+                @else
+                <li class="list-group-item">配送料 : 500円</li>
+                <li class="list-group-item">ご請求金額 :　{{$total+500}} 円</li>
+                @endif
+              </ul>
 
             <div class="mt-4 mb-3 float-right">
                <input class="btn btn-primary btn-lg" type="submit" name="" value="注文を確定する">

@@ -35,7 +35,7 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">次へ</span>
   </a>
-</div><!-- /.carousel -->
+</div><!-- /スライド画像 -->
 </div>
 
 <div class="row my-5 mx-auto">
@@ -45,9 +45,10 @@
       <h3>カテゴリから商品を探す</h3>
     </div>
     <div class="card-body">
-      <ul>
-        <li>野菜</li>
-        <li>果物</li>
+      <ul class="list-group">
+        <li class="list-group-item"><a href="{{ route('list') }}">全ての商品</a></li>
+        <li class="list-group-item"><a href="{{ route('yasai') }}">野菜</a></li>
+        <li class="list-group-item"><a href="{{ route('fruits') }}">果物</a></li>
       </ul>
     </div>
   </div>
