@@ -23,8 +23,8 @@ class OrdersExport implements FromCollection, WithHeadings
     {
         return [
           '日時',
-          '注文者',
-          '商品',
+          '顧客名',
+          '商品名',
           '数量'
         ];
     }
