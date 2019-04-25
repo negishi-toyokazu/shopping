@@ -10,7 +10,7 @@ Route::get('/shop/show', 'ShopController@show')->name('list');
 //野菜と果物で表示を分類
 Route::get('/shop/show/yasai', 'ShopController@yasai')->name('yasai');
 Route::get('/shop/show/fruits', 'ShopController@fruits')->name('fruits');
-
+//カートに商品を追加
 Route::post('/shop/show', 'ShopController@add')->middleware('auth')->name('add.cart');
 //お問い合わせフォーム
 Route::get('/shop/form', 'ShopController@form')->name('form');
@@ -18,13 +18,13 @@ Route::get('/shop/form', 'ShopController@form')->name('form');
 Route::get('/shop/info', 'ShopController@info')->name('info');
 //カート
 Route::get('/shop/cart', 'ShopController@cart')->middleware('auth')->name('cart');
+//orderstableにカートの中身を追加
 Route::post('/shop/cart/{id}', 'ShopController@order')->middleware('auth')->name('order');
 
 //削除
 Route::post('/shop/cart/', 'ShopController@cartDelete')->middleware('auth')->name('cart.delete');
 //注文確認
 Route::get('/shop/order/kakunin', 'ShopController@kakunin')->middleware('auth')->name('kakunin');
-
 
 
 //会員登録
@@ -34,8 +34,11 @@ Route::get('/shop/register/conp', 'ShopController@registerConp')->name('register
 //ログイン
 Route::get('/shop/login', 'ShopController@login')->name('shop.login');
 
-
-
+//スタッフトップ画面
+Route::get('admin', 'Admin\ShopController@top');
+//excelダウンロード
+Route::get('admin/users/export', 'ExportController@userExport')->name('user.export');
+Route::get('admin/orders/export', 'ExportController@orderExport')->name('order.export');
 
 //管理画面
 //商品

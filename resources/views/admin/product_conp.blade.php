@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="ja" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>商品追加完了</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  </head>
+@extends('layouts..admin.layout')
+@section('title', '商品追加完了画面')
+@section('content')
   <body>
     <div class="container mt-5">
     <h2>商品追加完了しました。</h2>
@@ -34,7 +30,5 @@
         </div>
       </div>
     </div>--}}
-
-
   </body>
-</html>
+@endsection

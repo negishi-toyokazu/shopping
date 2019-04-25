@@ -9,6 +9,12 @@ use App\Product;
 
 class ShopController extends Controller
 {
+
+    public function top()
+    {
+      return view('admin.top');
+    }
+
     public function addProduct()
     {
         return view('admin.product');
