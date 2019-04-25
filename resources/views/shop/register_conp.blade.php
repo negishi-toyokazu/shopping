@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', '根岸農園')
+@section('title', 'ねぎし農園')
 @section('content')
   <div class="col-md-6 mx-auto">
     <div class="card my-5 p-5">

@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', '根岸農園(商品一覧)')
+@section('title', 'ねぎし農園(商品一覧)')
 @section('content')
 <div class="container">
   <h2 class="my-3"><i class="fas fa-shopping-cart"></i>ショッピングカート</h2>

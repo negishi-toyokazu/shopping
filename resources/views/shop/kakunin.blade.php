@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', '根岸農園(商品一覧)')
+@section('title', 'ねぎし農園(商品一覧)')
 @section('content')
   <h2>注文確認</h2>
     <div class="row">

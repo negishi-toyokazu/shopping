@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', '根岸農園(商品一覧)')
+@section('title', 'ねぎし農園(商品一覧)')
 @section('content')
   <h1 style="text-align: center">お問い合わせ</h1>
     <div class="card bg-light col-md-8 mx-auto pt-4 px-5 my-4">

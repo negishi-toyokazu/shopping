@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', '根岸農園')
+@section('title', 'ねぎし農園')
 @section('content')
   <div class="row justify-content-md-center">
     <div class="col-md-5">
