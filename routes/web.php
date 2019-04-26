@@ -25,7 +25,10 @@ Route::post('/shop/cart/{id}', 'ShopController@order')->middleware('auth')->name
 Route::post('/shop/cart/', 'ShopController@cartDelete')->middleware('auth')->name('cart.delete');
 //注文確認
 Route::get('/shop/order/kakunin', 'ShopController@kakunin')->middleware('auth')->name('kakunin');
-
+//決済
+Route::post('shop/order/charge', 'ChargeController@charge')->middleware('auth')->name('charge');
+//決済完了画面
+Route::get('/shop/order/conp', 'ChargeController@orderConp')->name('order.conp');
 
 //会員登録
 Route::get('/shop/register', 'ShopController@register')->name('shop.register');

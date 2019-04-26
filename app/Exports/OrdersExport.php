@@ -15,7 +15,7 @@ class OrdersExport implements FromCollection, WithHeadings
     {
         return Order::join('products', 'products.id','=' , 'orders.product_id')
                       ->join('users', 'users.id', '=' , 'orders.user_id')
-                      ->select('orders.created_at','users.name','products.name','number')
+                      ->select('orders.created_at','users.name as user_name','products.name as product_name','number')
                       ->get();
     }
 

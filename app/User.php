@@ -7,11 +7,12 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Cashier\Billable;//追加stripe
 
 class User extends Authenticatable
 {
     use Notifiable;
-
+    use Billable; //追加stripe
     /**
      * The attributes that are mass assignable.
      *

@@ -74,7 +74,34 @@
               </ul>
 
             <div class="mt-4 mb-3 float-right">
-               <input class="btn btn-primary btn-lg" type="submit" name="" value="注文を確定する">
+              <form action="{{route('charge')}}" method="POST">
+                @csrf
+                @if($total>=3000)
+                 <script
+                   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                   data-key="pk_test_LI09hWHzfIcNAke8HTdIuRZH007Qw44Dce"
+                   data-amount="{{$total}}"
+                   data-name="Demo Site"
+                   data-label="決済をする"
+                   data-description="Widget"
+                   data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                   data-locale="auto"
+                   data-currency="jpy">
+                 </script>
+                 @else
+                 <script
+                   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                   data-key="pk_test_LI09hWHzfIcNAke8HTdIuRZH007Qw44Dce"
+                   data-amount="{{$total+500}}"
+                   data-name="Demo Site"
+                   data-label="決済をする"
+                   data-description="Widget"
+                   data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                   data-locale="auto"
+                   data-currency="jpy">
+                 </script>
+                 @endif
+              </form>
             </div>
           </div>
 
