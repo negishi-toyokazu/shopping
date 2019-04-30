@@ -9,10 +9,10 @@
 
       {{$order->product->name}} <br>
 
-      {{$order->product->price}}円×{{$order->number}}   {{$order->product->price*$order->number}}円 <br><br>
+      {{$order->product->price}}円×{{$order->number}}   {{$order->product->price*$order->number}}円 <br>
 
 @endforeach
-
+---------------------------------------<br>
 合計<br>
  {{$total}} 円<br>
 </p>
