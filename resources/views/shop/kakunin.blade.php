@@ -24,7 +24,13 @@
               <li class="list-group-item">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" name="" value="">
-                  <label class="form-check-label">クレジットカード決済</label>
+                  <label class="form-check-label">クレジットカード決済</label><br>
+                  <div class="row mx-auto">
+                    <img src="{{ asset('image/jcb.gif') }}" alt="jcb" style="height:20px; width:20px">
+                    <img class="mx-1" src="{{ asset('image/visa.gif') }}" alt="visa" style="height:20px; width:20px">
+                    <img src="{{ asset('image/mastercard.gif') }}" alt="mastercard" style="height:20px; width:20px">
+                    <img class="mx-1" src="{{ asset('image/american.gif') }}" alt="american" style="height:20px; width:20px">
+                  </div>
                 </div>
               </li>
               <li class="list-group-item">
@@ -81,7 +87,7 @@
                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                    data-key="pk_test_LI09hWHzfIcNAke8HTdIuRZH007Qw44Dce"
                    data-amount="{{$total}}"
-                   data-name="Demo Site"
+                   data-name="決済画面"
                    data-label="決済をする"
                    data-description="Widget"
                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
@@ -93,7 +99,7 @@
                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                    data-key="pk_test_LI09hWHzfIcNAke8HTdIuRZH007Qw44Dce"
                    data-amount="{{$total+500}}"
-                   data-name="Demo Site"
+                   data-name="決済画面"
                    data-label="決済をする"
                    data-description="Widget"
                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"

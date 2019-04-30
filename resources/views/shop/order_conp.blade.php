@@ -4,7 +4,7 @@
   <div class="col-md-6 mx-auto">
     <div class="card my-5 p-5">
       <h3 class="mx-auto">注文が完了しました。</h3>
-      <a href="{{route('top')}}" class="mx-auto">トップへ</a>
+      <a href="{{route('top')}}" class="btn btn-danger mx-auto">トップへ</a>
     </div>
   </div>
 @endsection
