@@ -117,7 +117,7 @@
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a class="btn-floating btn-tw mx-1 inline-text" href="http://twitter.com/share?url=https://www.google.com/text=ねぎし農園" target="_blank">
+                    <a class="btn-floating btn-tw mx-1 inline-text" href="http://twitter.com/share?url=https://www.google.com/" target="_blank">
                       <span style="font-size: 35px; color: #55ACEE;">
                       <i class="fab fa-twitter-square"></i>
                     </span>

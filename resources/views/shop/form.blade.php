@@ -6,11 +6,19 @@
       <form class="" action="" >
         <div class="form-group col-md-8">
           <label class="col-form-label">お名前</label>
-          <input type="text" class="form-control" name="name" placeholder="お名前">
+          @if (Auth::check())
+          <input type="text" class="form-control" name="name" value="{{ Auth::user()->name }}" placeholder="お名前" required>
+          @else
+          <input type="text" class="form-control" name="name" value="" placeholder="お名前" required>
+          @endif
         </div>
         <div class="form-group col-md-8">
           <label class="col-form-label">メールアドレス</label>
-          <input type="text" class="form-control" name="email" placeholder="メールアドレス">
+          @if (Auth::check())
+          <input type="text" class="form-control" name="email" value="{{ Auth::user()->email }}" placeholder="メールアドレス">
+          @else
+          <input type="text" class="form-control" name="email" value="" placeholder="メールアドレス">
+          @endif
         </div>
         <div class="form-group col-md-8">
           <label class="col-form-label">お問い合わせタイトル</label>
