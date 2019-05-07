@@ -66,6 +66,7 @@ class ShopController extends Controller
         return view('shop.cart', compact('cart'));
     }
 
+    // カートの商品一つを削除
     public function cartDelete(Request $request)
     {
         Cart::find($request->id)->delete();
