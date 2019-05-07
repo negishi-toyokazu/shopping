@@ -38,7 +38,9 @@
             <td>{{ $item->product->price }} 円</td>
             <td>{{ $item->product->price * $item->number }} 円</td>
 
-            <td><button type="submit" class="btn btn-danger btn-sm">削除</button></td>
+            <td>
+              <a href="{{ route('cart.delete', [$item->id]) }}" class="btn btn-danger btn-sm">削除</a>
+            </td>
 
           </tbody>
         </table>

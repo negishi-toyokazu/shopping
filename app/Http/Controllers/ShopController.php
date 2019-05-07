@@ -40,8 +40,8 @@ class ShopController extends Controller
     public function add(Request $request)
     {
         $cart = Cart::firstOrCreate(
-          ['product_id' => $request->product_id, 'user_id' => Auth::id()],
-          ['product_id' => $request->product_id, 'user_id' => Auth::id(), 'number' => $request->number]
+            ['product_id' => $request->product_id, 'user_id' => Auth::id()],
+            ['product_id' => $request->product_id, 'user_id' => Auth::id(), 'number' => $request->number]
       );
 
         if ($cart->wasRecentlyCreated) {
@@ -65,7 +65,7 @@ class ShopController extends Controller
 
         return view('shop.cart', compact('cart'));
     }
-
+    //カートの商品一つを削除
     public function cartDelete(Request $request)
     {
         Cart::find($request->id)->delete();

@@ -25,8 +25,8 @@ Route::get('/shop/cart', 'ShopController@cart')->middleware('auth')->name('cart'
 //orderstableにカートの中身を追加
 Route::post('/shop/cart/{id}', 'ShopController@order')->middleware('auth')->name('order');
 
-//削除
-Route::post('/shop/cart', 'ShopController@cartDelete')->middleware('auth')->name('cart.delete');
+//カートの商品一つを削除
+Route::get('/shop/cart/{id}', 'ShopController@cartDelete')->middleware('auth')->name('cart.delete');
 //注文確認
 Route::get('/shop/order/kakunin', 'ShopController@kakunin')->middleware('auth')->name('kakunin');
 //決済

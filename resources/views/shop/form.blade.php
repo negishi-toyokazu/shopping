@@ -8,7 +8,7 @@
         <div class="form-group col-md-8">
           <label class="col-form-label">お名前</label>
           @if (Auth::check())
-          <input type="text" class="form-control" name="name" value="{{ Auth::user()->name }}" placeholder="お名前" required>
+          <input type="text" class="form-control" name="name" value="{{ Auth::user()->name }}" placeholder="お名前">
           @else
           <input type="text" class="form-control" name="name" value="" placeholder="お名前" required>
           @endif
@@ -16,9 +16,9 @@
         <div class="form-group col-md-8">
           <label class="col-form-label">メールアドレス</label>
           @if (Auth::check())
-          <input type="text" class="form-control" name="email" value="{{ Auth::user()->email }}" placeholder="メールアドレス">
+          <input type="text" class="form-control" name="email" value="{{ Auth::user()->email }}" placeholder="メールアドレス" required>
           @else
-          <input type="text" class="form-control" name="email" value="" placeholder="メールアドレス">
+          <input type="text" class="form-control" name="email" value="" placeholder="メールアドレス" required>
           @endif
         </div>
         <div class="form-group col-md-8">
