@@ -13,7 +13,11 @@ Route::get('/shop/show/fruits', 'ShopController@fruits')->name('fruits');
 //カートに商品を追加
 Route::post('/shop/show', 'ShopController@add')->middleware('auth')->name('add.cart');
 //お問い合わせフォーム
-Route::get('/shop/form', 'ShopController@form')->name('form');
+Route::get('/shop/form', 'FormController@index')->name('form');
+//お問い合わせ送信
+Route::post('/shop/form', 'FormController@store')->name('form.submit');
+//お問い合わせ完了画面
+Route::get('/shop/form/conp', 'FormController@formConp')->name('form.conp');
 //農園情報
 Route::get('/shop/info', 'ShopController@info')->name('info');
 //カート
@@ -22,7 +26,7 @@ Route::get('/shop/cart', 'ShopController@cart')->middleware('auth')->name('cart'
 Route::post('/shop/cart/{id}', 'ShopController@order')->middleware('auth')->name('order');
 
 //削除
-Route::post('/shop/cart/', 'ShopController@cartDelete')->middleware('auth')->name('cart.delete');
+Route::post('/shop/cart', 'ShopController@cartDelete')->middleware('auth')->name('cart.delete');
 //注文確認
 Route::get('/shop/order/kakunin', 'ShopController@kakunin')->middleware('auth')->name('kakunin');
 //決済

@@ -3,7 +3,8 @@
 @section('content')
   <h1 style="text-align: center">お問い合わせ</h1>
     <div class="card bg-light col-md-8 mx-auto pt-4 px-5 my-4">
-      <form class="" action="" >
+      <form action="{{ route('form.submit')}}" method="post">
+        @csrf
         <div class="form-group col-md-8">
           <label class="col-form-label">お名前</label>
           @if (Auth::check())
@@ -22,11 +23,11 @@
         </div>
         <div class="form-group col-md-8">
           <label class="col-form-label">お問い合わせタイトル</label>
-          <input type="text" class="form-control" name="title" placeholder="タイトル">
+          <input type="text" class="form-control" name="title" placeholder="タイトル" required>
         </div>
         <div class="form-group col">
           <label class="col-form-label">お問い合わせ内容</label>
-          <textarea type="text" class="form-control" name="content" rows="5" placeholder="お問い合わせ内容"></textarea>
+          <textarea type="text" class="form-control" name="content" rows="5" placeholder="お問い合わせ内容" required></textarea>
         </div>
         <div class="form-group d-block mx-auto my-4 col-md-8">
           <button type="submit" class="btn btn-danger btn-block">送信</button>

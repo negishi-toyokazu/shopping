@@ -53,11 +53,6 @@ class ShopController extends Controller
         return redirect('/shop/show');
     }
 
-    public function form()
-    {
-        return view('shop.form');
-    }
-
     public function info()
     {
         return view('shop.info');
