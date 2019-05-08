@@ -116,4 +116,19 @@ class ShopController extends Controller
         session()->flash('message', '会員登録が完了しました');
         return view('shop.register_conp');
     }
+
+    public function delivery()
+    {
+      return view('shop.delivery');
+    }
+
+    public function payment()
+    {
+      return view('shop.payment');
+    }
+
+    public function returns()
+    {
+      return view('shop.returns');
+    }
 }

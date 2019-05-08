@@ -132,14 +132,14 @@
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
       <ul class="list-unstyled list-inline text-center">
-        <li class="list-inline-item"><a href="" class="inline-text">配送について</li>
-        <li class="list-inline-item"><a href="" class="inline-text">支払いについて</li>
-        <li class="list-inline-item"><a href="" class="inline-text">返品について</li>
+        <li class="list-inline-item"><a href="{{ route('shop.delivery') }}" class="inline-text">配送について</li>
+        <li class="list-inline-item"><a href="{{ route('shop.payment') }}" class="inline-text">支払いについて</li>
+        <li class="list-inline-item"><a href="{{ route('shop.returns') }}" class="inline-text">返品について</li>
       </ul>
 
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2019 Negishi Toyokazu:
+    <div class="footer-copyright text-center py-3">© 2019 Negishi Nouen:
       <a href=""></a>
     </div>
     <!-- Copyright -->

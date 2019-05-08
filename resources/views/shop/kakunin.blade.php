@@ -4,7 +4,7 @@
   <h2>注文確認</h2>
     <div class="row">
       <div class="col-md-3">
-        <div class="card p-3">
+        <div class="card p-3 shadow">
           <div class="card-head">
             <p>お届け先住所</p>
           </div>

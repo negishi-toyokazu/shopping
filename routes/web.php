@@ -34,6 +34,13 @@ Route::post('shop/order/charge', 'ChargeController@charge')->middleware('auth')-
 //決済完了画面
 Route::get('/shop/order/conp', 'ChargeController@orderConp')->name('order.conp');
 
+//配送について
+Route::get('/shop/delivery', 'ShopController@delivery')->name('shop.delivery');
+//支払いについて
+Route::get('/shop/payment', 'ShopController@payment')->name('shop.payment');
+//返品について
+Route::get('/shop/returns', 'ShopController@returns')->name('shop.returns');
+
 //会員登録
 Route::get('/shop/register', 'ShopController@register')->name('shop.register');
 Route::post('/shop/register', 'Auth\RegisterController@create')->name('register');

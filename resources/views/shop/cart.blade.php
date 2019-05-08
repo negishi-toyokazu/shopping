@@ -4,7 +4,7 @@
 <div class="container">
   <h2 class="my-3"><i class="fas fa-shopping-cart"></i>ショッピングカート</h2>
     <h4>{{ Auth::user()->name }}  様</h4>
-    <div class="card my-5 p-4">
+    <div class="card my-5 p-4 shadow">
       @foreach($cart as $item)
       <form action="{{route('order', [$item->id]) }}" method="post">
         @csrf

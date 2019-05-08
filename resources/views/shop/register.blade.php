@@ -3,7 +3,7 @@
 @section('content')
   <div class="row justify-content-md-center">
     <div class="col-md-5">
-      <div class="card">
+      <div class="card shadow">
         <div class="card-head bg-info p-3">
           <h3 class=""><i class="fas fa-registered"></i> 会員登録</h3>
         </div>

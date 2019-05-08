@@ -5,7 +5,7 @@
 
   <div class="row">
     @foreach($fruits as $product)
-    <div class="card col-md-3 mx-3 my-3">
+    <div class="card col-md-3 mx-3 my-3 shadow">
       <div class="card-head p-3">
       <img src="{{ asset('storage/image/' . $product->image_path) }}" class="card-img-top img-thumbnail" style="height: 200px" alt="...">
     </div>

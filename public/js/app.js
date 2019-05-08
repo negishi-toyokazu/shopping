@@ -49431,6 +49431,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/footer.scss":
+/*!************************************!*\
+  !*** ./resources/sass/footer.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/product.scss":
 /*!*************************************!*\
   !*** ./resources/sass/product.scss ***!
@@ -49443,16 +49454,17 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/product.scss ./resources/sass/admin.scss ***!
-  \***********************************************************************************************************************/
+/*!****************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/product.scss ./resources/sass/admin.scss ./resources/sass/footer.scss ***!
+  \****************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/negitoyo/Desktop/techboost/shopping/resources/js/app.js */"./resources/js/app.js");
 __webpack_require__(/*! /Users/negitoyo/Desktop/techboost/shopping/resources/sass/app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! /Users/negitoyo/Desktop/techboost/shopping/resources/sass/product.scss */"./resources/sass/product.scss");
-module.exports = __webpack_require__(/*! /Users/negitoyo/Desktop/techboost/shopping/resources/sass/admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! /Users/negitoyo/Desktop/techboost/shopping/resources/sass/admin.scss */"./resources/sass/admin.scss");
+module.exports = __webpack_require__(/*! /Users/negitoyo/Desktop/techboost/shopping/resources/sass/footer.scss */"./resources/sass/footer.scss");
 
 
 /***/ })

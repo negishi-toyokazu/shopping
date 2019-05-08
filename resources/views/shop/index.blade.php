@@ -6,7 +6,7 @@
   <h4>ようこそ　{{ Auth::user()->name }}　様</h4>
 </div>
 @endif
-<div class="card bg-dark">
+<div class="card bg-dark shadow">
 <div id="carouselExampleIndicators" class="carousel slide p-4" data-ride="carousel">
   <!-- インジケータの設定 -->
   <ol class="carousel-indicators">
@@ -40,7 +40,7 @@
 
 <div class="row my-5 mx-auto">
 <div class="col-md-5">
-  <div class="card p-3">
+  <div class="card p-3 shadow">
     <div class="card-head">
       <h3>カテゴリから商品を探す</h3>
     </div>
@@ -54,14 +54,14 @@
   </div>
 </div>
 <div class="col-md-7">
-  <div class="card p-3">
+  <div class="card p-3 shadow">
     <h3>お知らせ</h3>
   </div>
 </div>
 </div>
 
 <div class="col">
-  <div class="card p-3">
+  <div class="card p-3 shadow">
     <div class="card-head">
       <h3>おすすめの商品</h3>
     </div>
@@ -73,7 +73,7 @@
 </div>
 
   <div class="col my-5">
-    <div class="card p-3">
+    <div class="card p-3 shadow">
       <div class="card-head">
         <h3>ランキング</h3>
       </div>
@@ -85,7 +85,7 @@
 </div>
 
 <div class="col-md-8 mx-auto my-5">
-  <div class="card p-3">
+  <div class="card p-3 shadow">
     <div class="card-head">
       <h5>ねぎし農園について</h5>
     </div>

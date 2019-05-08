@@ -1,16 +1,18 @@
 @extends('layouts.layout')
 @section('title', 'ねぎし農園')
 @section('content')
-
+<link href="{{ asset('css/footer.css') }}" rel="stylesheet">
 <div class="col-md-6 mx-auto">
   <div class="card bg-light shadow">
     <div class="card-title mx-auto mt-4">
-      <h2 class="">農園情報</h2>
+      <h2 class="">配送について</h2>
     </div>
     <div class="card-body mx-4">
       <dl class="border-bottom">
-        <dt>名称</dt>
-        <dd>ねぎし農園</dd>
+        <dt>配送料に関する情報</dt>
+        <dd>通常500円<br>
+            3000円以上のご注文で送料無料<br>
+        </dd>
       </dl>
       <dl class="border-bottom">
         <dt>所在地</dt>
