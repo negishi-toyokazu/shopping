@@ -20,6 +20,10 @@
 <body>
       <div class="container">
         <main class="py-4">
+          {{-- フラッシュメッセージの表示 --}}
+            @if (session('message'))
+                <div class="alert alert-success">{{ session('message') }}</div>
+            @endif
             @yield('content')
         </main>
       </div>

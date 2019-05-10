@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Product;
+use App\Notice;
 
 class ShopController extends Controller
 {
@@ -44,6 +45,24 @@ class ShopController extends Controller
     public function conpProduct()
     {
       return view('admin.product_conp');
+    }
+
+    //お知らせ
+    public function notice()
+    {
+      return view('admin.notice');
+    }
+
+    public function addNotice(Request $request)
+    {
+      $this->validate($request, Notice::$rules);
+      $notice = new Notice;
+      $notice->content = $request->input('content');
+      unset($request['_token']);
+      $notice->save();
+
+      session()->flash('message', 'お知らせを追加しました。');
+      return redirect('/admin');
     }
 
 

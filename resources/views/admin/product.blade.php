@@ -1,8 +1,6 @@
 @extends('layouts..admin.layout')
 @section('title', '商品追加画面')
 @section('content')
-  <body>
-    <div class="container mt-5">
       <h1 style="text-align: center">商品追加</h1>
 
         <div class="card bg-light col-md-6 mx-auto px-5 py-3">
@@ -39,10 +37,8 @@
               <input type="file" class="form-control-file" name="image" value="{{ old('image') }}">
             </div>
             <div class="form-group mt-2 float-right mr-3">
-              <button type="submit" class="btn btn-primary">確認</button>
+              <button type="submit" class="btn btn-primary">追加</button>
             </div>
           </form>
         </div>
-    </div>
-  </body>
 @endsection
