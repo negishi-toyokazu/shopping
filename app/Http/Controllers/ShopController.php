@@ -7,13 +7,15 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Cart;
 use App\Order;
+use App\Notice;
 use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
     public function index()
     {
-        return view('shop.index');
+      $notices = Notice::orderBy('created_at', 'desc')->paginate(5);
+       return view('shop.index', compact('notices'));
     }
 
     public function show()

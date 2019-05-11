@@ -55,7 +55,24 @@
 </div>
 <div class="col-md-7">
   <div class="card p-3 shadow">
-    <h3>お知らせ</h3>
+    <div class="card-header">
+      <h3>お知らせ</h3>
+    </div>
+    <div class="card-body">
+
+
+      <ul class="list-group list-group-flush">
+        @foreach($notices as $notice)
+        <li class="list-group-item">
+          <span class="text-secondary">{{$notice->created_at->format('Y-m-d')}}</span>
+          <p class="text-danger mb-0">{{$notice->content}}</p>
+        </li>
+        @endforeach
+      </ul>
+      <div class="card-footer mx-auto bg-white">
+          {{ $notices->links() }}
+      </div>
+    </div>
   </div>
 </div>
 </div>
