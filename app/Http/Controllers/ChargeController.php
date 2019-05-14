@@ -55,6 +55,11 @@ class ChargeController extends Controller
         }
     }
 
+    public function daikin()
+    {
+      return view('shop.daikin');
+    }
+
     public function orderConp()
     {
         return view('shop.order_conp');

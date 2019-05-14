@@ -30,10 +30,13 @@ Route::post('/cart/{id}', 'ShopController@order')->middleware('auth')->name('ord
 Route::get('/cart/{id}', 'ShopController@cartDelete')->middleware('auth')->name('cart.delete');
 //注文確認
 Route::get('/order/kakunin', 'ShopController@kakunin')->middleware('auth')->name('kakunin');
-//決済
+//クレジット決済
 Route::post('/order/charge', 'ChargeController@charge')->middleware('auth')->name('charge');
+//代金引換決済
+Route::get('/order/daikin', 'ChargeController@daikin')->middleware('auth')->name('daikin');
 //決済完了画面
 Route::get('/order/conp', 'ChargeController@orderConp')->name('order.conp');
+
 
 //配送について
 Route::get('/delivery', 'ShopController@delivery')->name('shop.delivery');

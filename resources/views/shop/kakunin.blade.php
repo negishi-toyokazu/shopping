@@ -1,12 +1,12 @@
 @extends('layouts.layout')
 @section('title', 'ねぎし農園(商品一覧)')
 @section('content')
-  <h2>注文確認</h2>
+  <h2 class="mb-4">注文確認</h2>
     <div class="row">
-      <div class="col-md-3">
-        <div class="card p-3 shadow">
-          <div class="card-head">
-            <p>お届け先住所</p>
+      <div class="col-md-6">
+        <div class="card shadow">
+          <div class="card-header">
+            <p class="my-2">お届け先住所</p>
           </div>
           <div class="card-body">
             <p>{{ Auth::user()->address }}</p>
@@ -14,39 +14,9 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card p-3">
-          <div class="card-head">
-            <p>お支払い方法の選択</p>
-          </div>
-          <div class="card-body">
-            <ul class="list-group">
-              <li class="list-group-item">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="" value="">
-                  <label class="form-check-label">クレジットカード決済</label><br>
-                  <div class="row mx-auto">
-                    <img src="{{ asset('image/jcb.gif') }}" alt="jcb" style="height:20px; width:20px">
-                    <img class="mx-1" src="{{ asset('image/visa.gif') }}" alt="visa" style="height:20px; width:20px">
-                    <img src="{{ asset('image/mastercard.gif') }}" alt="mastercard" style="height:20px; width:20px">
-                    <img class="mx-1" src="{{ asset('image/american.gif') }}" alt="american" style="height:20px; width:20px">
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="" value="">
-                    <label class="form-check-label">代金引換</label>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
       <div class="col-md-5">
-        <div class="card p-4 my-3">
-          <div class="card-head">
+        <div class="card shadow">
+          <div class="card-header">
             <p>注文の詳細</p>
           </div>
 
@@ -79,40 +49,54 @@
                 @endif
               </ul>
 
-            <div class="mt-4 mb-3 float-right">
+            <div class="mt-4 mb-3 mx-auto">
               <form action="{{route('charge')}}" method="POST">
                 @csrf
                 @if($total>=3000)
+                <div class="credit-btn mb-3">
                  <script
                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                    data-key="pk_test_LI09hWHzfIcNAke8HTdIuRZH007Qw44Dce"
                    data-amount="{{$total}}"
-                   data-name="決済画面"
-                   data-label="決済をする"
+                   data-name="クレジットカード決済画面"
+                   data-label="クレジットカード決済で注文する"
                    data-description="Widget"
                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                    data-locale="auto"
                    data-currency="jpy">
                  </script>
+                 </div>
+                 <div class="daikin-btn">
+                   <a href="#" class="btn btn-success">代金引換で注文する</a>
+                 </div>
+               </div>
                  @else
+                 <div class="credit-btn mb-3">
                  <script
                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                    data-key="pk_test_LI09hWHzfIcNAke8HTdIuRZH007Qw44Dce"
                    data-amount="{{$total+500}}"
-                   data-name="決済画面"
-                   data-label="決済をする"
+                   data-name="クレジットカード決済画面"
+                   data-label="クレジットカードで注文する"
                    data-description="Widget"
                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                    data-locale="auto"
                    data-currency="jpy">
                  </script>
+                 </div>
+                 <div class="daikin-btn">
+                   <a href="{{route('daikin')}}" class="btn btn-success">代金引換で注文する</a>
+                 </div>
+                 </div>
                  @endif
               </form>
             </div>
+            <div class="card-footer bg-white">
+            <a class="btn btn-outline-danger" href="{{ route('cart')}}">カートに戻る</a>
+            </div>
           </div>
-
         </div>
-        <a class="btn btn-outline-primary mx-3" href="{{ route('cart')}}">カートに戻る</a>
+
       </div>
 
     </div>
