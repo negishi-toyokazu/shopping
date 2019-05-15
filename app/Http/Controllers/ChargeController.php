@@ -6,6 +6,7 @@ use Stripe\Stripe;
 use Stripe\Customer;
 use Stripe\Charge;
 use App\Order;
+use App\Cart;
 use App\Mail\OrderMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -17,10 +18,18 @@ class ChargeController extends Controller
     {
         $user_id = Auth::id();
         $user = Auth::user();
-        $orders = Order::where('user_id', $user_id)->get();
+        $orders = Cart::where('user_id', $user_id)->get();
         $total = 0;
         foreach ($orders as $order) {
             $total += $order->product->price * $order->number;
+        }
+
+        $items = $request->input('items');
+        foreach ($items as $key => $product) {
+            Order::updateOrCreate(
+                ['product_id' => $product['product_id'], 'user_id' => Auth::id()],
+                ['product_id' => $product['product_id'], 'user_id' => Auth::id(), 'number' => $product['number']]
+            );
         }
 
         try {
@@ -47,6 +56,7 @@ class ChargeController extends Controller
                           'currency' => 'jpy',
                           ));
             }
+
             Mail::to($user)->send(new OrderMail());
 
             return redirect()->route('order.conp');

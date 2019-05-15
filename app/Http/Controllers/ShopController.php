@@ -79,7 +79,7 @@ class ShopController extends Controller
     {
         $items = $request->input('items');
         foreach ($items as $key => $product) {
-            Order::updateOrCreate(
+            Cart::updateOrCreate(
                 ['product_id' => $product['product_id'], 'user_id' => Auth::id()],
                 ['product_id' => $product['product_id'], 'user_id' => Auth::id(), 'number' => $product['number']]
             );
@@ -93,7 +93,7 @@ class ShopController extends Controller
     public function kakunin()
     {
         $user_id = Auth::id();
-        $orders = Order::where('user_id', $user_id)->get();
+        $orders = Cart::where('user_id', $user_id)->get();
 
         $total=0;
         foreach ($orders as $order) {

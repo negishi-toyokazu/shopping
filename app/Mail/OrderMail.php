@@ -8,6 +8,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App\User;//追加
 use App\Order;//追加
+use App\Cart;
 use Illuminate\Support\Facades\Auth;
 
 class OrderMail extends Mailable
@@ -23,7 +24,7 @@ class OrderMail extends Mailable
     {
         $user = Auth::user();
         $user_id = Auth::id();
-        $orders = Order::where('user_id', $user_id)->get();
+        $orders = Cart::where('user_id', $user_id)->get();
         $total = 0;
         foreach ($orders as $order) {
             $total += $order->product->price * $order->number;

@@ -52,6 +52,10 @@
             <div class="mt-4 mb-3 mx-auto">
               <form action="{{route('charge')}}" method="POST">
                 @csrf
+                @foreach($orders as $order)
+                <input type="hidden" name="items[{{ $order->product_id }}][product_id]" value="{{$order->product_id}}">
+                <input type="hidden" name="items[{{ $order->product_id }}][number]" value="{{$order->number}}">
+                @endforeach
                 @if($total>=3000)
                 <div class="credit-btn mb-3">
                  <script
@@ -67,7 +71,7 @@
                  </script>
                  </div>
                  <div class="daikin-btn">
-                   <a href="#" class="btn btn-success">代金引換で注文する</a>
+                   <a href="{{route('daikin')}}" class="btn btn-success">代金引換で注文する</a>
                  </div>
                </div>
                  @else

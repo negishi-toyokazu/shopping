@@ -30,7 +30,7 @@
 
             <td>
               <div class="form-group">
-              <input style="width:50px" type="number" name="items[{{ $item->product_id }}][number]" value="{{$item->number}}">個
+              <input type="number" name="items[{{ $item->product_id }}][number]" value="{{$item->number}}" style="width:50px">個
               <input type="hidden" name="items[{{ $item->product_id }}][product_id]" value="{{$item->product_id}}">
               </div>
             </td>
