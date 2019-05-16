@@ -28,6 +28,7 @@ php artisan storage:link
 <input type="text" name="post" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');">
 <input type="text" name="address">
 
+
 参考
 Stripe
 https://stripe.com/jp
