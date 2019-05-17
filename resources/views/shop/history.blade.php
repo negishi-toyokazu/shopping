@@ -4,7 +4,7 @@
 <h2>注文履歴</h2>
 
 <table class="table table-hover table-bordered mt-5 bg-light">
-  <thead>
+  <thead class="bg-info">
     <tr>
     <th>日時</th>
     <th>商品</th>
