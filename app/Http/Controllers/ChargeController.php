@@ -26,8 +26,7 @@ class ChargeController extends Controller
 
         $items = $request->input('items');
         foreach ($items as $key => $product) {
-            Order::updateOrCreate(
-                ['product_id' => $product['product_id'], 'user_id' => Auth::id()],
+            Order::create(
                 ['product_id' => $product['product_id'], 'user_id' => Auth::id(), 'number' => $product['number']]
             );
         }

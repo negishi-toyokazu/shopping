@@ -21,6 +21,8 @@ Route::post('/form', 'FormController@store')->name('form.submit');
 Route::get('/form/conp', 'FormController@formConp')->name('form.conp');
 //農園情報
 Route::get('/info', 'ShopController@info')->name('info');
+//注文履歴
+Route::get('/history', 'ShopController@history')->name('order.history');
 //カート
 Route::get('/cart', 'ShopController@cart')->middleware('auth')->name('cart');
 //orderstableにカートの中身を追加

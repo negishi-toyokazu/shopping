@@ -133,4 +133,11 @@ class ShopController extends Controller
     {
       return view('shop.returns');
     }
+
+    public function history()
+    {
+      $user_id = Auth::id();
+      $orders = Order::where('user_id', $user_id)->get();
+      return view('shop.history', compact('orders'));
+    }
 }

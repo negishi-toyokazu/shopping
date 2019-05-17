@@ -72,6 +72,9 @@
             {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
               @else
               <li class="nav-item">
+                <a href="{{route('order.history')}}" class="nav-link">注文履歴</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="{{route('cart')}}"><i class="fas fa-shopping-cart"></i> カート</a>
               </li>
 

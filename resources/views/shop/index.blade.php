@@ -101,10 +101,20 @@
     </div>
 </div>
 
-<div class="col-md-8 mx-auto my-5">
+<div class="col-md-4 mx-auto my-5">
   <div class="card p-3 shadow">
     <div class="card-head">
-      <h5>ねぎし農園について</h5>
+      <h5 class="text-center">ねぎし農園</h5>
+      <dl class="border-bottom">
+        <dt>連絡先</dt>
+        <dd>【TEL】0123-45-6789<br>
+            【E-mail】negi-nouen@gmail.com<br>
+        </dd>
+      </dl>
+      <dl class="border-bottom">
+        <dt>所在地</dt>
+        <dd>〒123-4567<br>
+          群馬県邑楽郡板倉町板倉1234
     </div>
     <div class="card-body">
       <p></p>
