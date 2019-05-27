@@ -9,13 +9,21 @@ use App\Cart;
 use App\Order;
 use App\Notice;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ShopController extends Controller
 {
     public function index()
     {
-      $notices = Notice::orderBy('created_at', 'desc')->paginate(5);
-       return view('shop.index', compact('notices'));
+        $notices = Notice::orderBy('created_at', 'desc')->paginate(5);
+
+        $ranking = DB::table('orders')
+                  ->select(DB::raw('count(*) as product_count, product_id'))
+                  ->groupBy(DB::raw('product_id'))
+                  ->orderBy(DB::raw('product_count'))
+                  ->get();
+
+        return view('shop.index', compact('notices', 'ranking'));
     }
 
     public function show()
@@ -121,23 +129,23 @@ class ShopController extends Controller
 
     public function delivery()
     {
-      return view('shop.delivery');
+        return view('shop.delivery');
     }
 
     public function payment()
     {
-      return view('shop.payment');
+        return view('shop.payment');
     }
 
     public function returns()
     {
-      return view('shop.returns');
+        return view('shop.returns');
     }
 
     public function history()
     {
-      $user_id = Auth::id();
-      $orders = Order::where('user_id', $user_id)->get();
-      return view('shop.history', compact('orders'));
+        $user_id = Auth::id();
+        $orders = Order::where('user_id', $user_id)->get();
+        return view('shop.history', compact('orders'));
     }
 }

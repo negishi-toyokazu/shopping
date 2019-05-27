@@ -93,6 +93,7 @@
     <div class="card p-3 shadow">
       <div class="card-head">
         <h3>ランキング</h3>
+        {{$ranking}}
       </div>
       <div class="card-body">
         <img src="" alt="">
