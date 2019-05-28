@@ -93,7 +93,9 @@
     <div class="card p-3 shadow">
       <div class="card-head">
         <h3>ランキング</h3>
-        {{$ranking}}
+        @foreach($ranking as $rank)
+        {{ $rank->product->name }}
+        @endforeach
       </div>
       <div class="card-body">
         <img src="" alt="">
