@@ -18,6 +18,7 @@ class ShopController extends Controller
         $notices = Notice::orderBy('created_at', 'desc')->paginate(5);
 
         $ranking = DB::table('orders')
+                  ->join('products', 'orders.product_id', '=', 'products.id')
                   ->select(DB::raw('count(*) as product_count, product_id'))
                   ->groupBy(DB::raw('product_id'))
                   ->orderBy(DB::raw('product_count'))
