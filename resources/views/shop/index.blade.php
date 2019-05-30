@@ -94,7 +94,7 @@
       <div class="card-head">
         <h3>ランキング</h3>
         @foreach($ranking as $rank)
-        {{ $rank->product->name }}
+        {{ $rank->name }}
         @endforeach
       </div>
       <div class="card-body">
