@@ -19,9 +19,9 @@ class ShopController extends Controller
 
         $ranking = DB::table('orders')
                   ->join('products', 'orders.product_id', '=', 'products.id')
-                  ->select(DB::raw('count(*) as product_count, product_id'))
-                  ->groupBy(DB::raw('product_id'))
-                  ->orderBy(DB::raw('product_count'))
+                  ->select(DB::raw('count(*) as product_count, product_id, products.name, products.image_path'))
+                  ->groupBy('product_id', 'products.name', 'products.image_path')
+                  ->orderBy('product_count')
                   ->get();
 
         return view('shop.index', compact('notices', 'ranking'));

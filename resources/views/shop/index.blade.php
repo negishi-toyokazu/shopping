@@ -89,17 +89,20 @@
   </div>
 </div>
 
-  <div class="col my-5">
+  <div class="col-md-8 my-5">
     <div class="card p-3 shadow">
       <div class="card-head">
         <h3>ランキング</h3>
-        @foreach($ranking as $rank)
-        {{ $rank->product->name }}
-        @endforeach
+
       </div>
       <div class="card-body">
-        <img src="" alt="">
-        <p>商品名:</p>
+         <div class="col-md-6 mx-auto">
+        @foreach($ranking as $rank)
+        <p>{{$loop->iteration}}位</p>
+        <p>{{ $rank->name }}</p>
+        <img src="{{ asset('storage/image/' . $rank->image_path) }}" class="card-img-top img-thumbnail" style="height: 200px" alt="...">
+        @endforeach
+        </div>
       </div>
     </div>
 </div>
